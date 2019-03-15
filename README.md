@@ -18,8 +18,8 @@ SecureKeyStorage – a pod for storing sensitive data securely on iOS devices.
     - [Save String](#save-string)
     - [Obtain String](#obtain-string)
   - [Encrypted Store](#encrypted-store)
-    - [Save](#save)
-    - [Obtain](#obtain)
+    - [Save Data](#save-data)
+    - [Obtain Data](#obtain-data)
 - [Further reading](#further-reading)
 - [License](#license)
 
@@ -86,7 +86,7 @@ DispatchQueue.global().async {
 
 How use the encrypted store to protect items by a password.
 
-#### Save
+#### Save Data
 
 ```swift
 let secureStore = SecureDeviceStorage.encryptedStore(password: "geheim", user: "username")
@@ -95,7 +95,7 @@ if let data = "Secret Token".data(using: .utf8) {
 }
 ```
 
-#### Obtain
+#### Obtain Data
 
 ```swift
 let data = try? secureStore.getData(for: "secretTokenKey")
