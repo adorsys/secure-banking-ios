@@ -1,5 +1,42 @@
 # Secure Key Storage - iOS
 
+[![Build Status](https://travis-ci.com/adorsys/SecureKeyStorage.svg?branch=master)](https://travis-ci.com/adorsys/SecureKeyStorage.svg?branch=master)
+[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org)
+[![license](https://img.shields.io/badge/license-Apache_2.0-lightgrey.svg)](https://github.com/adorsys/SecureKeyStorage/blob/master/LICENSE)
+[![platform](https://img.shields.io/badge/platform-iOS_9+-lightgrey.svg)](https://img.shields.io/badge/platform-iOS_9+-lightgrey.svg)
+
+SecureKeyStorage – a pod for storing sensitive data securely on iOS devices.
+
+- [Requirements](#requirements)
+- [Installation](#installation)
+  - [CocoaPods](#cocoapods)
+- [Introduction](#introduction)
+  - [Keychain Security (Device Passcode required)](#keychain-security-device-passcode-required)
+  - [Secure Storage without Device Passcode](#secure-storage-without-device-passcode)
+- [Usage](#usage)
+  - [Keychain Store](#keychain-store)
+    - [Save String](#save-string)
+    - [Obtain String](#obtain-string)
+  - [Encrypted Store](#encrypted-store)
+    - [Save](#save)
+    - [Obtain](#obtain)
+- [Further reading](#further-reading)
+- [License](#license)
+
+## Requirements
+- iOS 9.0 SDK or later
+
+## Installation
+
+### CocoaPods
+
+YesWeScan is available through [CocoaPods](http://cocoapods.org).
+To install it, simply add the following line to your `Podfile`:
+
+```ruby
+pod 'SecureKeyStorage'
+```
+
 ## Introduction
 
 With Keychain Services Apple already provides functionality to securely store sensitive data, such as keys and login tokens, on an iOS device. Nevertheless the keychain is only secure, if the user has a device passcode set. According to Apple, 89% percent of the users have their device secured with a passcode (as of June 2016, see https://developer.apple.com/videos/play/wwdc2016/705/, 14:31 min). For devices with no passcode set, there has to be provided another option to securely store sensitive data on an iOS device.
@@ -74,3 +111,7 @@ https://developer.apple.com/videos/play/wwdc2016/705/
 https://developer.apple.com/library/content/documentation/Security/Conceptual/keychainServConcepts/02concepts/concepts.html
 - RNCryptor framework:
 https://github.com/RNCryptor/RNCryptor
+
+## License
+
+SecureKeyStorage is released under the **Apache 2.0 License**. Please see the [LICENSE](https://github.com/adorsys/SecureKeyStorage/blob/master/LICENSE) file for more information.
