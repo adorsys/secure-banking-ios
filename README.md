@@ -59,7 +59,7 @@ To encrypt sensitive data on devices that are not secured by a passcode a random
 
 ## Usage
 
-It is possible to store `String` and `Data`.
+It is possible to store `String` and `Data`. You can access all features with `import SecureKeyStorage`.
 
 ### Keychain Store
 
@@ -69,7 +69,7 @@ How to use a keychain store with user presence protected items.
 
 ```swift
 let keychainStore = SecureKeyStorage.keychainStore()
-try? keychainStore.save("Secret Token", for: "secretTokenKey")
+try? keychainStore?.save("Secret Token", for: "secretTokenKey")
 ```
 
 #### Obtain String
@@ -79,7 +79,7 @@ This operation requires an authentication of the user. Thus is must be run on a 
 ```swift
 DispatchQueue.global().async {
   let keychainStore = SecureKeyStorage.keychainStore()
-  let secret = try? keychainStore.getString(for: "secretTokenKey")
+  let secret = try? keychainStore?.getString(for: "secretTokenKey")
 }
 ```
 
