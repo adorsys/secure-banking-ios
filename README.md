@@ -1,4 +1,4 @@
-# Secure Key Storage - iOS
+# SecureKeyStorage - iOS
 
 [![Build Status](https://travis-ci.com/adorsys/SecureKeyStorage.svg?branch=master)](https://travis-ci.com/adorsys/SecureKeyStorage.svg?branch=master)
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org)
@@ -68,7 +68,7 @@ How to use a keychain store with user presence protected items.
 #### Save String
 
 ```swift
-let keychainStore = SecureDeviceStorage.keychainStore()
+let keychainStore = SecureKeyStorage.keychainStore()
 try? keychainStore.save("Secret Token", for: "secretTokenKey")
 ```
 
@@ -78,6 +78,7 @@ This operation requires an authentication of the user. Thus is must be run on a 
 
 ```swift
 DispatchQueue.global().async {
+  let keychainStore = SecureKeyStorage.keychainStore()
   let secret = try? keychainStore.getString(for: "secretTokenKey")
 }
 ```
@@ -89,7 +90,7 @@ How use the encrypted store to protect items by a password.
 #### Save Data
 
 ```swift
-let secureStore = SecureDeviceStorage.encryptedStore(password: "geheim", user: "username")
+let secureStore = SecureKeyStorage.encryptedStore(password: "geheim", user: "username")
 if let data = "Secret Token".data(using: .utf8) {
   try? secureStore.save(data, for: "secretTokenKey")
 }
@@ -98,6 +99,7 @@ if let data = "Secret Token".data(using: .utf8) {
 #### Obtain Data
 
 ```swift
+let secureStore = SecureKeyStorage.encryptedStore(password: "geheim", user: "username")
 let data = try? secureStore.getData(for: "secretTokenKey")
 ```
 
