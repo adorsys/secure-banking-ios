@@ -30,7 +30,7 @@ SecureKeyStorage – a pod for storing sensitive data securely on iOS devices.
 
 ### CocoaPods
 
-YesWeScan is available through [CocoaPods](http://cocoapods.org).
+SecureKeyStorage is available through [CocoaPods](http://cocoapods.org).
 To install it, simply add the following line to your `Podfile`:
 
 ```ruby
